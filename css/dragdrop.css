@@ -1,0 +1,113 @@
+
+.tela-esq{
+	float: left;
+	margin-top: 210px;
+	margin-left: 40px;
+	width: 588px;
+	height: 450px;
+	color: #E8E8E8;
+	background: #CDC9C9;
+	border: solid;
+	border-radius: 4px;
+	position: absolute;
+	
+}
+
+.tela-dir{
+	float: right;
+	margin-top: 210px;
+	margin-right: 40px;
+	width: 588px;
+	height: 450px;
+	color: #E8E8E8;
+	background: #CDC9C9;
+	border: solid;
+	border-radius: 4px;
+
+	position: relative;
+	
+}
+
+
+.container{
+	height: 150px;
+	background-color: #8B8989;
+
+}
+
+
+
+
+.destino{
+	position: relative;
+
+}
+
+
+
+.drop{
+	
+	width: 150px;
+	height: 150px;
+
+	margin-left: 25px;
+	
+	margin-top: 50px;
+	
+	border-radius: 5px;	
+	color: black;
+	
+	background: #E8E8E8;
+	
+	position: absolute;
+
+	background-size: 90% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+}
+
+.colum-dir{
+	width: 150px;
+	height: 150px;
+
+	margin-left: 15px;
+	margin-right: 25px;
+	margin-top: 50px;
+
+	/*color: black;
+	border: solid;*/
+	
+	position: absolute;
+	position: center;
+
+}
+
+.img{
+	width: 140px;
+	height: 140px;
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+
+
+p{
+	text-align: center;
+	padding: 25px 0px;
+	font-size: 30px;
+	color: black;
+}
+
+#css{color: black; }
+
+#drop-abacaxi{background-image: url("../img_2/drop-abacaxi.png");margin-left: 210px;}
+
+#drop-foguete{background-image: url("../img_2/drop-foguete.png");}
+
+#drop-dado{background-image: url("../img_2/drop-dado.png");margin-left: 400px;}
+
+#drop-morango{background-image: url("../img_2/drop-morango.png");margin-top: 250px;}
+
+#drop-elefante{background-image: url("../img_2/drop-elefante.png");margin-top: 250px; margin-left: 210px;}
+
+#drop-rato{background-image: url("../img_2/drop-rato.png");margin-top: 250px; margin-left: 400px;}

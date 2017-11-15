@@ -1,0 +1,195 @@
+.quadrado-left{
+	float: left;
+	width: 150px;
+	height: 150px;
+	border-radius: 3px;
+	
+	clear:both;
+
+}
+
+#quadrado-menu{
+	width: 200px;
+	height: 200px;
+	border-radius: 3px;
+	background-color: #CDC0B0;
+	margin-top: 10%;
+	margin-left:30%;
+	margin-right: 8%;
+	clear: both;
+	text-align: center;
+	padding-top: 70px;
+}
+#quadrado-menu-right{
+	width: 200px;
+	height: 200px;
+	border-radius: 3px;
+	background-color: #CDC0B0;
+	margin-top: 10%;
+}
+
+#p{
+	text-decoration: none;
+	padding-top: 10%;
+
+}
+	
+
+.quadrado-right{
+	float: right;
+	width: 150px;
+	height: 150px;
+	border-radius: 3px;
+	
+}
+
+
+.borda{
+	float: left;
+	border-radius: 3px;
+	text-align: center;
+	color: white;
+
+	margin-left: 25%;
+	margin-right: 35%;
+	width: 690px;
+
+
+}
+
+.menu{
+	float: left;
+	width: 150px;
+	height: 150px;
+	border-radius: 3px;
+
+}
+
+/*.banner_1{
+    padding: 40px 0px;
+    width: 100%;
+    height: 100%;
+    
+    height: 200px;
+    position: absolute;
+    background-color: #FFC1C1;
+}
+*/
+
+
+#banner{
+	box-sizing: border-box;
+	padding:20px;
+	background-color: #8B8989;
+	
+}
+
+#fontBanner_2{
+	background-color: #CDC9C9;	
+	text-align: center;
+	padding: 40px;
+	border-radius: 5px;
+}
+#fontBanner_2 p{
+	font-size: 30px;
+	font-family: Georgia, serif;
+	color: black;
+}
+
+#navbar{
+    margin: 0;
+    border-radius: 0;
+    border-color: #E8E8E8;
+    background-color: #8B8989;
+}
+
+#navbarFont{
+	font-family: Georgia, serif;
+	color: black;
+
+
+}
+
+.affix{
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+.bntModal{
+	background-color: #CDC9C9;
+	border-radius: 5px;
+	border-color: #E8E8E8;
+	font-family: Georgia, serif;
+	color: black;
+	padding: 25px;
+	font-size: 25px;
+	margin-top: 10%;
+}
+
+#bnt{
+	margin-left: 25%;
+	margin-right: 4%;
+
+}
+
+#bntForm{
+	background-color: #8B8989;
+	border-radius: 5px;
+	border-color: #E8E8E8;
+	font-family: Georgia, serif;
+	color: black;
+}
+
+#bntFechar{
+	background-color: #8B8989;
+	border-radius: 5px;
+	border-color: #E8E8E8;
+	font-family: Georgia, serif;
+	color: black;
+}
+
+.bntMenu1{
+	background-color: #FFC1C1;
+	border-radius: 5px;
+	border-color: #FFC1C1;
+	font-family: Georgia, serif;
+	color: white;
+	padding: 25px;
+	font-size: 25px;
+	margin-top: 20%;
+
+}
+
+#bntMenu{
+	margin-left: 25%;
+	margin-right: 4%;
+}
+
+#img01{
+	}
+
+
+.img-thumbnail{
+	margin-top: 30px;
+	margin-left: 20px;
+	width: 80%;
+}
+
+.modal-body{background-color: #CDC9C9;}
+
+
+
+h3,h5{
+	font-style: italic;
+}
+
+
+
+
+.erro{
+	background: #CD5C5C;
+	opacity: 1;
+	color: black;
+
+}
