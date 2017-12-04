@@ -1,3 +1,5 @@
+<?php include("conecta.php"); ?>
+
 <?php
 	$matriculaAluno = $_GET['matriculaAluno'];
 	$nomeAluno =$_GET['nomeAluno'];
@@ -5,19 +7,37 @@
 	$sexoAluno = $_GET['sexoAluno'];
 	$serieAluno = $_GET['serie'];
 
+	function InsereAluno($conexao, $matriculaAluno, $nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno){
 
-	$conexao = mysqli_connect('localhost','root','','eduk');
+	 $query = "insert into alunos(matricula,nome,serie,sexo,dataNasc)values('{$matriculaAluno}','{$nomeAluno}','{$serieAluno}','{$sexoAluno}','{$dataNascAluno}')";
+
+	return mysqli_query($conexao,$query);
+	
+	 }
 
 
-	$query = "insert into aluno(matricula,nome,serie,sexo,dataNasc)values('{$matriculaAluno}','{$nomeAluno}','{$serieAluno}','{$sexoAluno}','{$dataNascAluno}')";
+	 if(InsereAluno($conexao, $matriculaAluno, $nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno)){
+	 	echo "Sucesso";
+	 	header("Location: menuAluno.php");
+	 	die();
+	 }else{
+	 	$msg = mysqli_error($conexao);
+	 	echo $msg;
+	 }
 
-	mysqli_query($conexao,$query);
 
+
+
+
+	// $query = "insert into aluno(matricula,nome,serie,sexo,dataNasc)values('{$matriculaAluno}','{$nomeAluno}','{$serieAluno}','{$sexoAluno}','{$dataNascAluno}')";
+
+	// mysqli_query($conexao,$query);
 
 	
-	mysqli_close($conexao);
+
+
+	//mysqli_close($conexao);
 
 
 
 	//	echo("Adicionado!");
-?>
