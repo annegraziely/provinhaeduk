@@ -10,7 +10,7 @@ echo "Entrou";
 
  function autenticacao($conexao,$user,$senha){
 
- 	$sql = "select * from login where user = '$user' and senha='$senha'";
+ 	$sql = "select * from aluno where matricula = '$user' and senha='$senha'";
  	
  	$result = mysqli_query($conexao,$sql);
 

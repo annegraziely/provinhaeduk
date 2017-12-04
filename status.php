@@ -1,9 +1,12 @@
-<?php include("conecta.php");
+<?php include("conecta.php");?>
+<?php include("conectado.php");
 
 
 	$nota = $_GET['pontos'];
 	
-	$alunoID = 3;
+	//$alunoID = 3;
+	$alunoID = $_SESSION["user"];
+
 
 function InsereStatus($conexao, $nota, $status, $alunoID){
 

@@ -6,7 +6,7 @@ removeAluno($conexao,$id);
 
 
 function removeAluno($conexao,$id){
-	$query = "delete from alunos where id = {$id}";
+	$query = "delete from aluno where matricula = {$id}";
 	return mysqli_query($conexao,$query);
 }
 

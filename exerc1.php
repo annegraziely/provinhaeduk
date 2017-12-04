@@ -70,7 +70,7 @@
 	<form class="form-inline" action="status.php" style="margin-top: 530px; margin-left: 40px;">
   				<div class="form-group">
 	    			<label>Nota</label>
-	      			<input id="pontos" type="text" name="pontos" class="form-control">
+	      			<input id="pontos" type="text" name="pontos"  class="form-control">
 				</div>
   				<div class="form-group">
 	    			<label for="exampleInputName2">Professor</label>

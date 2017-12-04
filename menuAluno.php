@@ -90,7 +90,7 @@
 				</select>
 
 			
-			 <div class="modal-footer" style="background-color: #CDC9C9;margin-top: 15px;">
+			<div class="modal-footer" style="background-color: #CDC9C9;margin-top: 15px;">
     		<button type="submit" class="btn btn-default" id="bntForm">Salvar</button>
     		<button type="button" class="btn btn-default" id="bntFechar" data-dismiss="modal">Fechar</button>
     		</div>
@@ -134,7 +134,7 @@
 	 			<tr>
 	 				<td><?php echo $aluno['nome']; ?></td>
 	 				<td><?php echo $aluno['serie']; ?></td>
-	 				<td><a href="remove-aluno.php?id=<?=$aluno['id']?>" class="text-danger" >Remover</a></td>
+	 				<td><a href="remove-aluno.php?id=<?=$aluno['matricula']?>" class="text-danger" >Remover</a></td>
 	 			</tr>		
 	 				
 	 			<?php	} ?>
@@ -143,7 +143,7 @@
 			</table>
 
 		 	<div class="modal-footer" style="background-color: #CDC9C9;margin-top: 15px;">	
-		 	<button type="submit" class="btn btn-default" id="bntForm">Salvar</button>
+		 	<!-- <button type="submit" class="btn btn-default" id="bntForm">Salvar</button> -->
     		<button type="button" class="btn btn-default" id="bntFechar" data-dismiss="modal">Fechar</button>
     		</div>
     		</form>

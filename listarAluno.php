@@ -4,7 +4,7 @@
 	
 	function ListaAlunos($conexao){
 		$alunos = [];
-		$resultado = mysqli_query($conexao,"select * from alunos");
+		$resultado = mysqli_query($conexao,"select * from aluno");
 
 	while ($aluno = mysqli_fetch_assoc($resultado)) {
 		array_push($alunos, $aluno);

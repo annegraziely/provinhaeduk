@@ -2,21 +2,28 @@
 
 <?php
 	$matriculaAluno = $_GET['matriculaAluno'];
+	$senha = '123';
 	$nomeAluno =$_GET['nomeAluno'];
 	$dataNascAluno = $_GET['dataNascAluno'];
 	$sexoAluno = $_GET['sexoAluno'];
 	$serieAluno = $_GET['serie'];
 
-	function InsereAluno($conexao, $matriculaAluno, $nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno){
+	function InsereAluno($conexao, $matriculaAluno, $senha,$nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno){
 
-	 $query = "insert into alunos(matricula,nome,serie,sexo,dataNasc)values('{$matriculaAluno}','{$nomeAluno}','{$serieAluno}','{$sexoAluno}','{$dataNascAluno}')";
+	 $query = "insert into aluno(matricula,senha,nome,serie,sexo,dataNasc)values('{$matriculaAluno}','{$senha}','{$nomeAluno}','{$serieAluno}','{$sexoAluno}','{$dataNascAluno}')";
 
 	return mysqli_query($conexao,$query);
 	
 	 }
 
+	 function login($conexao,$matriculaAluno,$senha){
+	 	$query2 = "insert into login(user,senha)values('{$matriculaAluno}','{$senha}')";
 
-	 if(InsereAluno($conexao, $matriculaAluno, $nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno)){
+	 	return mysqli_query($conexao,$query2);
+	 }
+
+
+	 if(InsereAluno($conexao, $matriculaAluno, $senha, $nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno)&&login($conexao,$matriculaAluno,$senha)){
 	 	echo "Sucesso";
 	 	header("Location: menuAluno.php");
 	 	die();
@@ -24,6 +31,7 @@
 	 	$msg = mysqli_error($conexao);
 	 	echo $msg;
 	 }
+
 
 
 

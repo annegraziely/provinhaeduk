@@ -1,3 +1,5 @@
+<?php include("conecta.php");?>
+
 <?php
 	$matricula = $_GET['matriculaProf'];
 	$nome =$_GET['nomeProf'];
@@ -9,14 +11,28 @@
 	$dataNasc = $_GET['dataNascProf'];
 
 
-	$conexao = mysqli_connect('localhost','root','','eduk');
+	function InsereProf($conexao,$matricula,$nome,$email,$senha,$sexo,$rg,$cpf,$dataNasc){
+			$query = "insert into professor(matricula,nome,email,senha,sexo,rg,cpf,dataNasc)values('{$matricula}','{$nome}','{$email}',
+					'{$senha}','{$sexo}','{$rg}','{$cpf}','{$dataNasc}')";
+			
+			return mysqli_query($conexao,$query);
+	}
+
+	function login($conexao,$matriculaAluno,$senha){
+	 	$query2 = "insert into login(user,senha)values('{$matriculaAluno}','{$senha}')";
+
+	 	return mysqli_query($conexao,$query2);
+	 }
+
+	  if(InsereProf($conexao,$matricula,$nome,$email,$senha,$sexo,$rg,$cpf,$dataNasc)&&login($conexao,$matricula,$senha)){
+	 	echo "Sucesso";
+	 	header("Location: menuProf.php");
+	 	die();
+	 }else{
+	 	$msg = mysqli_error($conexao);
+	 	echo $msg;
+	 }
 
 
-	$query = "insert into professor(matricula,nome,email,senha,sexo,rg,cpf,dataNasc)values('{$matricula}','{$nome}','{$email}',
-	'{$senha}','{$sexo}','{$rg}','{$cpf}','{$dataNasc}')";
 
-	mysqli_query($conexao,$query);
-	mysqli_close($conexao);
-
-	echo("Adicionado!");
 ?>
