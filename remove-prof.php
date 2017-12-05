@@ -1,7 +1,8 @@
 <?php include("conecta.php");
 
+header('Content-Type:'."text/plain");
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 removeProfessor($conexao,$id);
 
 
@@ -11,6 +12,4 @@ function removeProfessor($conexao,$id){
 }
 
 
-header("Location: menuProf.php?removido=true");
-die();
-
+ 

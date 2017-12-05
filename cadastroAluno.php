@@ -1,12 +1,16 @@
 <?php include("conecta.php"); ?>
 
 <?php
-	$matriculaAluno = $_GET['matriculaAluno'];
+
+	header('Content-Type:'."text/plain");
+ 
+	
+	$matriculaAluno = $_POST['matriculaAluno'];
 	$senha = '123';
-	$nomeAluno =$_GET['nomeAluno'];
-	$dataNascAluno = $_GET['dataNascAluno'];
-	$sexoAluno = $_GET['sexoAluno'];
-	$serieAluno = $_GET['serie'];
+	$nomeAluno =$_POST['nomeAluno'];
+	$dataNascAluno = $_POST['dataNascAluno'];
+	$sexoAluno = $_POST['sexoAluno'];
+	$serieAluno = $_POST['serieAluno'];
 
 	function InsereAluno($conexao, $matriculaAluno, $senha,$nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno){
 
@@ -24,8 +28,8 @@
 
 
 	 if(InsereAluno($conexao, $matriculaAluno, $senha, $nomeAluno,$dataNascAluno, $sexoAluno, $serieAluno)&&login($conexao,$matriculaAluno,$senha)){
-	 	echo "Sucesso";
-	 	header("Location: menuAluno.php");
+	 	//echo "Sucesso";
+	 	//header("Location: menuAluno.php");
 	 	die();
 	 }else{
 	 	$msg = mysqli_error($conexao);

@@ -1,8 +1,8 @@
 <?php include("conecta.php"); 
 
-	$nome = $_GET['nome'];
-	$nota = $_GET['nota'];
-	$status = $_GET['status'];
+	$nome = $_POST['nome'];
+	$nota = $_POST['nota'];
+	$status = $_POST['status'];
 	
 
 	//echo $nota;

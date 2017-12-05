@@ -1,6 +1,4 @@
 <?php include("conectado.php"); ?>
-<?php include("listarProf.php"); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +7,9 @@
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/listarProf.js"></script>
+
 </head>	
 <body>
 		<script type="text/javascript" src="js/menuProf.js"></script>
@@ -55,7 +56,7 @@
 	    		<h4 class="modal-title" >Dados do Cadastro</h4>
 	    	</div>
 	    	<div class="modal-body">
-			<form action="cadastroProf.php">
+			<form id="formProf" method="post" action="">
 					<div class="form-group">
 					<label for="matriculaProf">Matricula:</label>
 					<input type="number" class="form-control" id="matriculaProf" name="matriculaProf" placeholder="Matricula" style="width: 100px" required oninput="check(this)">
@@ -80,14 +81,14 @@
 
 			    <div class="radio">
 				  <label>
-				    <input type="radio" name="sexoProf" id="optionsRadios1" value="feminino" checked>
+				    <input type="radio" name="sexoProf" id="sexoProf" value="feminino" checked>
 				    Feminino
 				  </label>
 				</div>
 
 				<div class="radio">
 				  <label>
-				    <input type="radio" name="sexoProf" id="optionsRadios2" value="masculino">
+				    <input type="radio" name="sexoProf" id="sexoProf" value="masculino">
 				    Masculino
 				  </label>
 				</div>
@@ -120,7 +121,7 @@
     	<div class="modal-header" style="background-color: #CDC9C9;border-radius: 5px;">
     		 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-    		<h4 class="modal-title" >Consulta de Alunos</h4>
+    		<h4 class="modal-title" >Consulta de Professores</h4>
     	</div>
     	<div class="modal-body">
 			<form class="form-inline">
@@ -131,27 +132,18 @@
 
     			<a id="listarAlunos" class="btn btn-default"  href="#" role="button" >Buscar</a>
     		
-    		<br><br>
-    		<table id="tabAlunos" class="table table-hover">
-				<tr>
-					<td><b>Nome</b></td>
-					<td><b>Matricula</b></td>
-					<td><b></b></td>
-				</tr>
-				<?php
-				$professores = ListaProf($conexao);
-					foreach ($professores as $professor) { ?>
-	 			<tr>
-	 				<td><?php echo $professor['nome']; ?></td>
-	 				<td><?php echo $professor['matricula']; ?></td>
-	 				<td><a href="remove-prof.php?id=<?=$professor['matricula']?>" class="text-danger" >Remover</a></td>
-	 			</tr>		
-	 				
-	 			<?php	} ?>
-
-
+    		<h5></h5>
+    		
+    		<table id="minhaTabela" class="table table-hover">
+				<caption>Dados de Professores</caption>
+				<thead>
+					<th>Nome</th>
+					<th>Matricula</th>
+					<th></th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
-
 		 	<div class="modal-footer" style="background-color: #CDC9C9;margin-top: 15px;">	
 		 	<!-- <button type="submit" class="btn btn-default" id="bntForm">Salvar</button> -->
     		<button type="button" class="btn btn-default" id="bntFechar" data-dismiss="modal">Fechar</button>
@@ -166,6 +158,8 @@
 		<!--<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>-->
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/cadastrarProf.js"></script>
+        <script type="text/javascript" src="js/excluirProf.js"></script>
 		<!-- <script type="text/javascript" src="js/script.js"></script> -->
 		
 </body>

@@ -1,9 +1,5 @@
 
 
-
-carregarAlunos();
-
-
 function carregarAlunos(){
 	var itens = "", url = "listarAluno.php";
 
@@ -24,19 +20,22 @@ function carregarAlunos(){
 			for(var i=0;i<retorno.length;i++){
 				itens +="<tr>";
 				itens +="<td>" + retorno[i].nome+"</td>";
-				itens +="<td id='mat'>" + retorno[i].matricula+"</td>";
+				itens +="<td>" + retorno[i].matricula+"</td>";
 				itens +="<td>" + retorno[i].serie+"</td>";
-				itens +="<td>"+ ""				 +"</td>";
+				itens +="<td>"+ " "				 +"</td>";
 				itens +="</tr>";
 			}
 			$("#minhaTabela tbody").html(itens);
 
 			$("h5").html("Carregado!");
 		}
-	}   
+	} 
 
 
 	});
 
 }
+
+
+
 

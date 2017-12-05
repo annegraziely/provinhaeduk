@@ -1,11 +1,11 @@
 
 
 
-carregarAlunos();
+carregarProf();
 
 
-function carregarAlunos(){
-	var itens = "", url = "listarAluno.php";
+function carregarProf(){
+	var itens = "", url = "listarProf.php";
 
 	$.ajax({
 		url: url,
@@ -25,7 +25,6 @@ function carregarAlunos(){
 				itens +="<tr>";
 				itens +="<td>" + retorno[i].nome+"</td>";
 				itens +="<td id='mat'>" + retorno[i].matricula+"</td>";
-				itens +="<td>" + retorno[i].serie+"</td>";
 				itens +="<td>"+ ""				 +"</td>";
 				itens +="</tr>";
 			}

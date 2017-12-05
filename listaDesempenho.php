@@ -1,7 +1,13 @@
 <?php include("conecta.php"); ?>
 
 <?php
+
+
+	header('Content-Type:'."text/plain");
 	
+
+	ListaStatus($conexao);
+
 	function ListaStatus($conexao){
 		$alunos = [];
 		$resultado = mysqli_query($conexao,"select nome, nota, status from status inner join aluno on status.alunoID=aluno.matricula");
@@ -12,7 +18,8 @@
 		// echo $aluno['nome']." ";
 		// echo $aluno['sexo']."<br>";
 	}
-	return $alunos;
+	echo json_encode($alunos, JSON_PRETTY_PRINT);
 
 	}
 
+ 

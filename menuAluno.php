@@ -1,19 +1,22 @@
 <?php include("conecta.php"); ?>
-<?php include("listarAluno.php"); ?>
 <?php include("conectado.php"); ?>
-
+  
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Cadastro Aluno</title>
 	<meta charset="utf-8">
-
+	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- 	<script src="js/bootstrap.min.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/listar.js"></script>
+	<script type="text/javascript" src="js/cadastrar.js"></script>
+
 </head>	
 <body>
-		<script type="text/javascript" src="js/menuProf.js"></script>
+		
 <header>
 <div id="banner">
 	<div class="banner_2" id="fontBanner_2">
@@ -58,7 +61,7 @@
     		<h4 class="modal-title" >Dados do Cadastro</h4>
     	</div>
     	<div class="modal-body">
-			<form action="cadastroAluno.php">
+			<form id="cadastrarAluno" method="post" action="cadastroAluno.php">
 				<div class="form-group">
 				<label for="matriculaAluno">Matricula:</label>
 				<input type="number" class="form-control" id="matriculaAluno" name="matriculaAluno" placeholder="Matricula" style="width: 100px" required oninput="check(this)">
@@ -73,25 +76,25 @@
 				</div>
 			    <div class="radio">
 				  <label>
-				    <input type="radio" name="sexoAluno" id="optionsRadios1" value="feminino" checked>
+				    <input type="radio" name="sexoAluno" id="sexoAluno" value="feminino" checked>
 				    Feminino
 				  </label>
 				</div>
 				<div class="radio">
 				  <label>
-				    <input type="radio" name="sexoAluno" id="optionsRadios2" value="masculino">
+				    <input type="radio" name="sexoAluno" id="sexoAluno" value="masculino">
 				    Masculino
 				  </label>
 				</div>
 				<label for="serieAluno">Série:</label>
-				<select name="serie" class="form-control">
-				  <option id="1">1</option>
-				  <option id="2">2</option>
+				<select name="serie" id="serie" class="form-control">
+				  <option value="1">1</option>
+				  <option value="2">2</option>
 				</select>
 
 			
 			<div class="modal-footer" style="background-color: #CDC9C9;margin-top: 15px;">
-    		<button type="submit" class="btn btn-default" id="bntForm">Salvar</button>
+    		<button id="bntForm" type="submit" class="btn btn-default" >Salvar</button>
     		<button type="button" class="btn btn-default" id="bntFechar" data-dismiss="modal">Fechar</button>
     		</div>
     		</form>
@@ -120,27 +123,20 @@
     			</div>
 
     			<a id="listarAlunos" class="btn btn-default"  href="#" role="button" >Buscar</a>
+    			<h5></h5>
     		
-    		<br><br>
-    		<table id="tabAlunos" class="table table-hover">
-				<tr>
-					<td><b>Nome</b></td>
-					<td><b>Série</b></td>
-					<td><b></b></td>
-				</tr>
-			<?php
-				$alunos = ListaAlunos($conexao);
-					foreach ($alunos as $aluno) { ?>
-	 			<tr>
-	 				<td><?php echo $aluno['nome']; ?></td>
-	 				<td><?php echo $aluno['serie']; ?></td>
-	 				<td><a href="remove-aluno.php?id=<?=$aluno['matricula']?>" class="text-danger" >Remover</a></td>
-	 			</tr>		
-	 				
-	 			<?php	} ?>
-
-
+    		<table id="minhaTabela" class="table table-hover">
+				<caption>Dados de Alunos</caption>
+				<thead>
+					<th>Nome</th>
+					<th>Matricula</th>
+					<th>Serie</th>
+					<th></th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
+
 
 		 	<div class="modal-footer" style="background-color: #CDC9C9;margin-top: 15px;">	
 		 	<!-- <button type="submit" class="btn btn-default" id="bntForm">Salvar</button> -->
@@ -156,11 +152,13 @@
 
 
 		<!--<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>-->
-		<!--<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>-->
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/cadastrar.js"></script>
+        <script type="text/javascript" src="js/excluir.js"></script>
 		<!-- <script type="text/javascript" src="js/script.js"></script> -->
-		<script type="text/javascript" src="js/listar.js"></script>
+		
 		
 </body>
 </html>

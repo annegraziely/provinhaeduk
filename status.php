@@ -15,7 +15,7 @@ function InsereStatus($conexao, $nota, $status, $alunoID){
 	return mysqli_query($conexao,$query);
 	
 	 }
-
+ 
 	 if($nota>4){
 	 	$status = "Aluno sabe ler";
 	 }else{

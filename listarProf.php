@@ -2,18 +2,27 @@
 
 <?php
 	
-	function ListaProf($conexao){
-		$professores = [];
-		$resultado = mysqli_query($conexao,"select * from professor");
+	header('Content-Type:'."text/plain");
+	
+		$professores=[];
+		$sql = mysqli_query($conexao,"select * from professor");
+		$row = mysqli_num_rows($sql);
 
-	while ($professor = mysqli_fetch_assoc($resultado)) {
-		array_push($professores, $professor);
+		if(!$sql){
+			echo '[{"Erro":"Há algum erro com a busca."';
+			echo '}]';
+		}else if($row<1){
+			echo '[{"Erro":"Não há nenhum dado cadastrado"';
+			echo '}]';
+		}else{
+			while ($professor = mysqli_fetch_assoc($sql)) {
+		 	array_push($professores, $professor);
 
-		// echo $aluno['nome']." ";
-		// echo $aluno['sexo']."<br>";
+			
+		}
+		echo json_encode($professores, JSON_PRETTY_PRINT);
+		
 	}
-	return $professores;
-
-	}
+	
 
 

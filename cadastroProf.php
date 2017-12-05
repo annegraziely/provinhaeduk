@@ -1,14 +1,17 @@
 <?php include("conecta.php");?>
 
 <?php
-	$matricula = $_GET['matriculaProf'];
-	$nome =$_GET['nomeProf'];
-	$email = $_GET['emailProf'];
-	$senha = $_GET['senhaProf'];
-	$sexo = $_GET['sexoProf'];
-	$rg = $_GET['rgProf'];
-	$cpf = $_GET['cpfProf'];
-	$dataNasc = $_GET['dataNascProf'];
+
+	header('Content-Type:'."text/plain");
+
+	$matricula = $_POST['matriculaProf'];
+	$nome =$_POST['nomeProf'];
+	$email = $_POST['emailProf'];
+	$senha = $_POST['senhaProf'];
+	$sexo = $_POST['sexoProf'];
+	$rg = $_POST['rgProf'];
+	$cpf = $_POST['cpfProf'];
+	$dataNasc = $_POST['dataNascProf'];
 
 
 	function InsereProf($conexao,$matricula,$nome,$email,$senha,$sexo,$rg,$cpf,$dataNasc){

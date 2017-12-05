@@ -1,5 +1,5 @@
 <?php include("conecta.php"); ?>
-<?php include("listaDesempenho.php"); ?>
+
 <?php include("conectado.php"); ?>
 <!DOCTYPE html>
 <html>
@@ -61,27 +61,20 @@
 
     			<a id="listarAlunos" class="btn btn-default"  href="#" role="button" >Buscar</a>
     		
-    		<br><br>
-    		<table id="tabAlunos" class="table table-hover">
-				<tr>
-					<td><b>Nome</b></td>
-					<td><b>Nota</b></td>
-					<td><b>Status</b></td>
-					<td><b>Gerar Relatório</b></td>
-				</tr>
-				<?php
-				$alunos = ListaStatus($conexao);
-					foreach ($alunos as $aluno) { ?>
-	 			<tr>
-	 				<td><?php echo $aluno['nome']; ?></td>
-	 				<td><?php echo $aluno['nota']; ?></td>
-	 				<td><?php echo $aluno['status']; ?></td>
-	 				<td><a href="gerarPDF.php?nome=<?=$aluno['nome']?>&nota=<?=$aluno['nota']?>&status=<?=$aluno['status']?>" class="text-danger">Gerar PDF</a>
-	 				</td>
-	 			</tr>
-	 				
-	 			<?php	} ?>
+    		<h5></h5>
+    		
+    		<table id="minhaTabela" class="table table-hover">
+				<caption>Dados de Alunos</caption>
+				<thead>
+					<th>Nome</th>
+					<th>Nota</th>
+					<th>Status</th>
+					<th></th>
+				</thead>
+				<tbody>
+				</tbody>
 			</table>
+    		
 
 		 	<div class="modal-footer" style="background-color: #CDC9C9;margin-top: 15px;">	
 		 	
@@ -97,6 +90,7 @@
 
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/desempenho.js"></script>
 	
 
 </body>

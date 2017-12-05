@@ -1,7 +1,8 @@
 <?php include("conecta.php"); 
 
+header('Content-Type:'."text/plain");
 
-$id = $_GET['id'];
+$id = $_POST['idAluno'];
 removeAluno($conexao,$id);
 
 
@@ -11,6 +12,6 @@ function removeAluno($conexao,$id){
 }
 
 
-header("Location: menuAluno.php?removido=true");
-die();
+//header("Location: menuAluno.php?removido=true");
+//die();
 
